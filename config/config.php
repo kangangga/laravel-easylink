@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'sdk' => [
+        'host' =>  env('EASYLINK_SDK_HOST', 'localhost'),
+        'serial_number' =>  env('EASYLINK_SDK_SN', '1234567890'),
+    ],
     'database' => [
         'driver' => 'mysql',
         'url' => env('EASYLINK_DB_URL'),

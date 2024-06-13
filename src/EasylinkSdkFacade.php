@@ -2,20 +2,19 @@
 
 namespace Kangangga\EasylinkSdk;
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Kangangga\EasylinkSdk\Skeleton\SkeletonClass
+ * @see \Kangangga\EasylinkSdk\EasylinkSdk
  */
 class EasylinkSdkFacade extends Facade
 {
-    /**
-     * Get the registered name of the component.
-     *
-     * @return string
-     */
     protected static function getFacadeAccessor()
     {
-        return 'laravel-easylink';
+        return EasylinkSdk::make(
+            Config::get('laravel-easylink.sdk.host'),
+            Config::get('laravel-easylink.sdk.serial_number'),
+        );
     }
 }
