@@ -12,9 +12,6 @@ class EasylinkSdkFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return EasylinkSdk::make(
-            Config::get('laravel-easylink.sdk.host'),
-            Config::get('laravel-easylink.sdk.serial_number'),
-        );
+        return 'laravel-easylink';
     }
 }
