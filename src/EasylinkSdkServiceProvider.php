@@ -19,13 +19,6 @@ class EasylinkSdkServiceProvider extends ServiceProvider
             'database.connections.easylink',
             Config::get('laravel-easylink.database')
         );
-
-        $this->app->bind('laravel-easylink', function () {
-            return new EasylinkSdk(
-                Config::get('laravel-easylink.key'),
-                Config::get('laravel-easylink.secret')
-            );
-        });
     }
 
     public function boot()
