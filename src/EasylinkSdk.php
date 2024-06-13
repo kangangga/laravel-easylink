@@ -85,7 +85,7 @@ class EasylinkSdk
         if ($result->get('Result')) {
 
             $data = collect($result->get('Data'))->map(function ($item) {
-                $item['PIN'] = str($item['PIN'])->toInteger();
+                $item['PIN'] = intval($item['PIN']);
                 $item['nip'] = $item['PIN'];
                 $item['date'] = $item['ScanDate'];
                 return $item;
@@ -117,7 +117,7 @@ class EasylinkSdk
         if ($result->get('Result')) {
 
             $data = collect($result->get('Data'))->map(function ($item) {
-                $item['PIN'] = str($item['PIN'])->toInteger();
+                $item['PIN'] = intval($item['PIN']);
                 $item['nip'] = $item['PIN'];
                 $item['date'] = $item['ScanDate'];
                 return $item;
