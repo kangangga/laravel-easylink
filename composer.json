@@ -1,0 +1,52 @@
+{
+    "name": "kangangga/laravel-easylink",
+    "description": "laravel library for communicating with Fingerspot EasyLink SDK.",
+    "keywords": [
+        "kangangga",
+        "laravel-easylink"
+    ],
+    "homepage": "https://github.com/kangangga/laravel-easylink",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Angga Saputra",
+            "email": "masangga.com@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kangangga\\EasylinkSdk\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kangangga\\EasylinkSdk\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kangangga\\EasylinkSdk\\EasylinkSdkServiceProvider"
+            ],
+            "aliases": {
+                "EasylinkSdk": "Kangangga\\EasylinkSdk\\EasylinkSdkFacade"
+            }
+        }
+    }
+}
